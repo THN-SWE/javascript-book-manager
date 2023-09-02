@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin project - Thulasikan</title>
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <nav>
+        <span>My Library</span>
+        <!-- A button to open the popup form -->
+        <span><button class="open-button" id="open-form-btn">add book</button></span>
+    </nav>
+
+
+
+    <!-- The form -->
+    <div class="form-popup" id="myForm">
+        <form class="form-container" id="new_book_form">
+            <h1>New Book</h1>
+
+            <!-- Title input -->
+<label for="new-book-name"><b>Title: </b><input id="new-book-name" type='text' placeholder="book title" name="book name" maxlength="50" required>
+</label>
+
+<!-- Author input -->
+<label for="new-book-author"><b>Author: </b><input id="new-book-author" type="text" placeholder="who wrote it" name="book author" pattern="^[a-zA-Z\s]+$" required>
+</label>
+<!-- Validated with pattern: Allow only letters, spaces, and hyphens (for names like "John Smith" or "Mary-Jane"). -->
+ 
+<!-- Year input -->
+<label for="new-book-year"><b>Year published: </b><input id="new-book-year" type="number" placeholder="year" min="1000" max="9999" name="year" required>
+</label>
+<!-- Validated with min and max attributes: Year must be between 1000 and 9999. -->
+ 
+<!-- Pages input -->
+<label for="new-book-pages"><b>No. of Pages: </b><input id="new-book-pages" type="number" placeholder="pages" min="1" name="pages" required>
+</label>
+<!-- Validated with min attribute: Pages must be a positive integer (1 or greater). -->
+ 
+<!-- Read input (Checkbox) -->
+<label for="new-book-read"><b>Have read ?</b><input id="new-book-read" type="checkbox" name="read">
+</label><br>
+<!-- No specific validation needed for a checkbox. -->
+
+<!-- Submit button -->
+<button id="submitBtn" type="submit" class="btn">Update</button>
+
+<!-- Close button (for the form) -->
+<button type="button" class="btn cancel" id="close-form-btn">Close</button>
+
+        </form>
+    </div>
+
+    <!-- books table  -->
+    <div class="container">
+        <table id="books-table" align="center">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year Published</th>
+                <th>No.of Pages</th>
+                <th>Read or Not</th>
+            </tr>
+
+
+        </table>
+    </div>
+    <script src="script.js"></script>
+    <script src="displayform.js"></script>
+</body>
+
+</html>
